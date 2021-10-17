@@ -226,15 +226,24 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        url = request.json
-        content = url['url']
-        if content is None or content == "":
+#         url = request.json
+#         content = url['url']
+#         if content is None or content == "":
+#             return jsonify({"error": "no file"})
+
+#         try:
+#             prediction = predict(content)
+#             # prediction.headers.add('Access-Control-Allow-Origin', '*')
+
+        content = request.data
+        conSplit = content.decode('UTF-8')   
+
+        if conSplit is None or conSplit == "":
             return jsonify({"error": "no file"})
 
         try:
-            prediction = predict(content)
-            # prediction.headers.add('Access-Control-Allow-Origin', '*')
-
+            prediction = predict(conSplit)            
+            
             return jsonify(prediction)
         except Exception as e:
             return jsonify({"error 1": str(e)})
