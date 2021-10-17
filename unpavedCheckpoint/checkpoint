@@ -1,0 +1,2 @@
+model_checkpoint_path: "../parkingsurfaceUnpavedQuality-model"
+all_model_checkpoint_paths: "../parkingsurfaceUnpavedQuality-model"
