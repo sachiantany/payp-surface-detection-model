@@ -9,7 +9,6 @@ chardet==4.0.0
 click==8.0.1
 cycler==0.10.0
 distlib==0.3.2
-Django==3.2.7
 filelock==3.0.12
 Flask==2.0.1
 flatbuffers==1.12
