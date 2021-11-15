@@ -220,30 +220,21 @@ def predict(path):
         return data
 
 app = Flask(__name__)
+CORS(app, resources={r'/*': {'origins': '*'}})
 
-# print("Test : ", predict('https://sableasphalt.com/wp-content/uploads/2018/02/Sable-Potholes-Before.jpg'))
-
-@app.route("/", methods=["GET", "POST"])
+@app.route("/mode", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-#         url = request.json
-#         content = url['url']
-#         if content is None or content == "":
-#             return jsonify({"error": "no file"})
+        
+        content = request.args['url1']
 
-#         try:
-#             prediction = predict(content)
-#             # prediction.headers.add('Access-Control-Allow-Origin', '*')
-
-        content = request.data
-        conSplit = content.decode('UTF-8')   
-
-        if conSplit is None or conSplit == "":
+        if content is None or content == "":
             return jsonify({"error": "no file"})
 
         try:
-            prediction = predict(conSplit)            
-            
+            prediction = predict(content)
+            print("Test : ", prediction)
+
             return jsonify(prediction)
         except Exception as e:
             return jsonify({"error 1": str(e)})
