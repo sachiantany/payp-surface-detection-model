@@ -1,20 +1,11 @@
 import cv2 as cv
 import numpy as np
 import tensorflow as tf
-import argparse
-import sys
 import os.path
-import random
 import os
-import glob
-import operator
 import time
-
-import json
-import io
-from PIL import Image
 from flask import Flask, request, jsonify
-import base64
+from flask_cors import CORS
 
 tf.compat.v1.disable_eager_execution()
 
