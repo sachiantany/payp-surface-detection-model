@@ -32,7 +32,7 @@ matplotlib==3.4.2
 mccabe==0.6.1
 numpy==1.19.5
 oauthlib==3.1.0
-opencv-python==4.2.0.34
+opencv-python==4.5.2.52
 opt-einsum==3.3.0
 protobuf==3.17.0
 pyasn1==0.4.8
