@@ -1,3 +1,4 @@
-cmake
-libgtk2.0-dev
-pkg-config
+libsm6
+libxrender1
+libfontconfig1
+libice6
