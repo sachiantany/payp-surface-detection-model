@@ -2,3 +2,4 @@ libsm6
 libxrender1
 libfontconfig1
 libice6
+conda-forge opencv=4.5.1
